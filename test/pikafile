@@ -1,0 +1,18 @@
+cc = g++ -c $(in: *.cpp) -o $(out: *.o) -W -Wall -std=c++11 -pedantic
+ld = g++ $[in: *.o] -o $(out: *)
+
+lib/common-dep:
+	cc src obj
+dep-test1: lib/common-dep
+	cc src obj
+dep-test2: lib/common-dep
+	cc src obj
+
+test1: dep-test1
+	cc src obj
+	ld bin
+test2: dep-test2
+	cc src obj
+	ld bin
+
+default-rule: test1 test2
