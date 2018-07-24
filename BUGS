@@ -1,0 +1,3 @@
+#4:	in a multi-use, there may be an unsatisfied input requirement (FIXED ?)
+#5:	no multi-use dependency on other multi-use (NOT A BUG)
+#6:	two rules could have the same output
